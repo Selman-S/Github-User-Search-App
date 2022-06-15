@@ -16,8 +16,8 @@ buton.addEventListener('keypress', function (e) {
 });
 getUser()
 async function getUser() {
-  // const user = input.value;
-  const user = 'selman-s';
+  const user = input.value;
+  // const user = 'selman-s';
 
   const url =`https://api.github.com/users/${user}`;
  
