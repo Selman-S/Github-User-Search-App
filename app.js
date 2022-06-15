@@ -8,13 +8,13 @@ window.addEventListener('load',() => {
   input.focus()
 })
 
-// buton.addEventListener('click',getUser);
+buton.addEventListener('click',getUser);
 buton.addEventListener('keypress', function (e) {
   if (e.key === 'Enter'){
     getUser()
   }
 });
-getUser()
+
 async function getUser() {
   const user = input.value;
   // const user = 'selman-s';
@@ -90,7 +90,7 @@ async function getUser() {
        console.log(profile);
        
         
-        following1.innerHTML +=`<div class="main">
+        following1.innerHTML +=`<div class="contain"><div class="main">
              <div class="cart-top">
              <div class="profile-img"><img src="${avatar_url}" alt=""></div>
              </div>
@@ -120,7 +120,7 @@ async function getUser() {
              </div>
              </div>
             </div>
-           </div>`
+           </div></div>`
         
       });
     
