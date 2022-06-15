@@ -19,7 +19,7 @@ async function getUser() {
   const user = input.value;
   // const user = 'selman-s';
 
-  const url =`https://api.github.com/users/${user}`;
+  const url = await `https://api.github.com/users/${user}`;
  
 
     const profileUser = await fetch(url);
@@ -74,7 +74,7 @@ async function getUser() {
     const user = document.querySelector('.login').textContent;
    
     
-    const url =`https://api.github.com/users/${user}/following`;
+    const url =await `https://api.github.com/users/${user}/following`;
   
    
   
