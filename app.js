@@ -27,11 +27,11 @@ async function getUser() {
     const {login,avatar_url,html_url,public_repos,followers,following,name}=profile;
     
     
-    console.log( document.querySelector('.profile-img').style.backgroundImage);
+   
     
     contain.innerHTML = `<div class="main">
     <div class="cart-top">
-    <div class="profile-img"></div>
+    <div class="profile-img"><img src="${avatar_url}" alt=""></div>
     </div>
     <div class="cart-bottom">
     <div class="desc">
@@ -60,7 +60,7 @@ async function getUser() {
     </div>
     </div>
     </div>`  
-    document.querySelector('.profile-img').style.backgroundImage=`url(${avatar_url})`;
+ 
     input.value ='';
     input.focus();
  
@@ -86,13 +86,13 @@ async function getUser() {
 
         const profileUser = await fetch(url);
         const profile = await profileUser.json();
-        const {login,avatar_url,html_url,public_repos,followers,following,name}=profile;
+        const {avatar_url,html_url,public_repos,followers,following,name}=profile;
        console.log(profile);
        
         
         following1.innerHTML +=`<div class="main">
              <div class="cart-top">
-             <div class="profile-img"></div>
+             <div class="profile-img"><img src="${avatar_url}" alt=""></div>
              </div>
              <div class="cart-bottom">
              <div class="desc">

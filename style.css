@@ -92,7 +92,7 @@ body {
   transform:scale(.98)
 }
 .profile-img img {
-  
+  width:150px;
 }
 
 .main {
@@ -115,6 +115,7 @@ box-shadow: 5px 5px 30px -10px gray;
 .profile-img {
   position:absolute;
   border-radius: 50%;
+  overflow: hidden;
   
   width: 150px;
   height:150px;
