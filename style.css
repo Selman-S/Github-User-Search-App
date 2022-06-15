@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@200;300;400;700&display=swap');
 
 
 :root {
@@ -22,6 +22,17 @@ body {
   font-family: 'Kumbh Sans', sans-serif;
   color:var(--very-dark-blue)
 }
+#first {
+  font-weight: 200;
+  font-size: 3rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+.login {
+  display: block;
+  font-size: 1px;
+  visibility: hidden;
+}
 
 .container {
   background-color:rgba(255, 255, 255, 0.1) ;
@@ -38,9 +49,17 @@ body {
   display: flex;
   gap: 3em;
   flex-wrap: wrap;
-  
+  margin-bottom: 3rem;
   justify-content: center;
   
+}
+.following {
+  display: flex;
+  gap: 3em;
+  flex-wrap: wrap;
+  
+  margin-top: 3rem;
+  justify-content: center;
 }
 .btn-div {
   display: flex;
@@ -72,10 +91,13 @@ body {
 .btn-div button:active {
   transform:scale(.98)
 }
+.profile-img img {
+  
+}
 
 .main {
 width:350px;
-height:390px;
+height:440px;
 background-color: #fff;
 border-radius: 20px;
 overflow: hidden;
@@ -93,19 +115,17 @@ box-shadow: 5px 5px 30px -10px gray;
 .profile-img {
   position:absolute;
   border-radius: 50%;
-  background-image: url('./images/image-victor.jpg');
-  width: 105px;
-  height:105px;
+  
+  width: 150px;
+  height:150px;
   left: 50%;
-  border:6px solid #fff;
-  top: 95px;
+  border:4px solid #fff;
+  top: 60px;
   transform: translateX(-50%);
   background-size: contain;
 }
 
-.cart-bottom {
- 
-}
+
 .desc {
   display: flex;
   justify-content: center;
@@ -151,6 +171,28 @@ box-shadow: 5px 5px 30px -10px gray;
 .link:active {
   transform:scale(.98)
 }
+.link1:hover {
+  opacity:.9;
+}
+.link1:active {
+  transform:scale(.98)
+}
+.link1 {
+  padding:3px 1rem;
+
+  background-color: var(--dark-cyan);
+  color:white;
+  cursor: pointer;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  
+}
+
 .fans {
   border-top: 1px solid rgb(231, 231, 231);
   display: flex;
@@ -169,7 +211,7 @@ box-shadow: 5px 5px 30px -10px gray;
 }
 
 .fan {
-  font-size: 11px;
+  font-size: 13px;
   margin-top: .4rem;
   font-weight: normal;
 }
