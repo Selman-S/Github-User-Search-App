@@ -28,7 +28,7 @@ async function getUser() {
     
     
    
-    
+    following1.innerHTML =''
     contain.innerHTML = `<div class="main">
     <div class="cart-top">
     <div class="profile-img"><img src="${avatar_url}" alt=""></div>
