@@ -16,20 +16,30 @@ input.addEventListener('keypress', function (e) {
 });
 
 async function getUser() {
-  const user = input.value;
-  // const user = 'selman-s';
-
-  const url = await `https://api.github.com/users/${user}?client_id=3b925c08aab40ac38d05&client_secret=31be1b1285e20f238e8777adb3bc11907739a47b`;
- 
+  try {
+    // const user = 'selman-s';
+    const user = input.value;
+    const url = await `https://api.github.com/users/${user}?client_id=3b925c08aab40ac38d05&client_secret=31be1b1285e20f238e8777adb3bc11907739a47b`;
 
     const profileUser = await fetch(url);
     const profile = await profileUser.json();
-    const {login,avatar_url,html_url,public_repos,followers,following,name}=profile;
+    if(profile.documentation_url=='https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting'){
+      contain.innerHTML=`${profile.message} <a href="https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting" target="_blank" >Click to documentation</a>`
+    }else{
+
+      writeUser(profile)
+    }
     
-    
-   
-    following1.innerHTML =''
-    contain.innerHTML = `<div class="main">
+  }
+  catch(err) {
+    alert('Error: ' + err.message)
+  }
+}
+
+function writeUser(profile){
+  const {login,avatar_url,html_url,public_repos,followers,following,name}=profile;
+  following1.innerHTML =''
+  contain.innerHTML = `<div class="main">
     <div class="cart-top">
     <div class="profile-img"><img src="${avatar_url}" alt=""></div>
     </div>
@@ -59,12 +69,18 @@ async function getUser() {
     </div>
     </div>
     </div>`  
- 
     input.value ='';
     input.focus();
+    getFollow()
+  
+  
+}
+  
+  
+  
+  
  
-   getFollow()
-  }
+ 
 
  
   
