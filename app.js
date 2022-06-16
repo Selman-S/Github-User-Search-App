@@ -82,7 +82,7 @@ async function getUser() {
       const profile = await profileUser.json();
       
       profile.forEach(async (us)=>{
-        const url =await `https://api.github.com/users/${us.login}`;
+        const url =await `https://api.github.com/users/${us.login}?client_id=3b925c08aab40ac38d05&client_secret=31be1b1285e20f238e8777adb3bc11907739a47b`;
 
         const profileUser = await fetch(url);
         const profile = await profileUser.json();
