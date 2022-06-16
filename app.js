@@ -9,7 +9,7 @@ window.addEventListener('load',() => {
 })
 
 buton.addEventListener('click',getUser);
-buton.addEventListener('keypress', function (e) {
+input.addEventListener('keypress', function (e) {
   if (e.key === 'Enter'){
     getUser()
   }
@@ -27,32 +27,24 @@ async function getUser() {
     const {login,avatar_url,html_url,public_repos,followers,following,name}=profile;
     
     
-   if(profile.message == "Not Found"){
-    contain.innerHTML = `<img src="./not_found.jpg">`
-   }else if(!profile.ok){
-    contain.innerHTML =`<p>${profile.message}</p>`
-
-   }
-   else  {
-
-     
-     contain.innerHTML = `<div class="main">
-     <div class="cart-top">
-     <div class="profile-img"><img src="${avatar_url}" alt=""></div>
-     </div>
-     <div class="cart-bottom">
-     <div class="desc">
-     <div class="desc-name">
-     <p class="login">${login}</p>
-     <p class="user-name">${name}</p>
-     
-     </div>
-     <a class="link" href="${html_url}" target="_blank">View Profile</a>
-     <a class="link1">View All Followings</a>
-     </div>
-     
-     <div class="fans">
-     <div class="fans-div">
+   
+    
+    contain.innerHTML = `<div class="main">
+    <div class="cart-top">
+    <div class="profile-img"><img src="${avatar_url}" alt=""></div>
+    </div>
+    <div class="cart-bottom">
+    <div class="desc">
+    <div class="desc-name">
+    <p class="login">${login}</p>
+    <p class="user-name">${name}</p>
+  
+    </div>
+    <a class="link" href="${html_url}" target="_blank">View Profile</a>
+    
+    
+    <div class="fans">
+    <div class="fans-div">
     <p class="quantity">${public_repos}</p>
     <p class="fan">Public Repos</p>
     </div>
@@ -67,22 +59,21 @@ async function getUser() {
     </div>
     </div>
     </div>`  
-    
-    getFollow()
-  }
+ 
     input.value ='';
     input.focus();
-    
+ 
+   getFollow()
   }
-  
-  
+
+ 
   
   async function getFollow() {
-    
+
     const user = document.querySelector('.login').textContent;
    
     
-    const url =await `https://api.github.com/users/${user}/following`;
+    const url =await `https://api.github.com/users/${user}?client_id=3b925c08aab40ac38d05&client_secret=31be1b1285e20f238e8777adb3bc11907739a47b`;
   
    
   
