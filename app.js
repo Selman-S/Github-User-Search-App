@@ -29,7 +29,11 @@ async function getUser() {
     
    if(profile.message == "Not Found"){
     contain.innerHTML = `<img src="./not_found.jpg">`
-   }else {
+   }else if(!profile.ok){
+    contain.innerHTML =`<p>${profile.message}</p>`
+
+   }
+   else  {
 
      
      contain.innerHTML = `<div class="main">
