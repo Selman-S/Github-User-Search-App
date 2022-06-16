@@ -220,5 +220,11 @@ box-shadow: 5px 5px 30px -10px gray;
 @media (max-width: 576px){
   .btn-div{
     display: block;
+    text-align: center;
+
+  }
+  .btn-div button{
+    margin-top: 1rem;
+
   }
 }

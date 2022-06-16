@@ -24,7 +24,7 @@ async function getUser() {
     const profileUser = await fetch(url);
     const profile = await profileUser.json();
     if(profile.documentation_url=='https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting'){
-      contain.innerHTML=`${profile.message} <a href="https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting" target="_blank" >Click to documentation</a>`
+      contain.innerHTML=`API rate limit exceeded for you <a href="https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting" target="_blank" >Click to documentation</a>`
     }else{
 
       writeUser(profile)
@@ -135,72 +135,12 @@ function writeUser(profile){
              <p class="fan">Followings</p>
              </div>
              </div>
-            </div>
-           </div></div>`
-        
-      });
-    
-      
-      
-      
-  //     console.log( document.querySelector('.profile-img').style.backgroundImage);
-      
-  //     following.innerHTML = `<div class="main">
-  //     <div class="cart-top">
-  //     <div class="profile-img"></div>
-  //     </div>
-  //     <div class="cart-bottom">
-  //     <div class="desc">
-  //     <div class="desc-name">
-      
-  //     <p class="user-name">${name}</p>
-    
-  //     </div>
-  //     <a class="link" href="${html_url}" target="_blank">View Profile</a>
-     
-  //     </div>
-      
-  //     <div class="fans">
-  //     <div class="fans-div">
-  //     <p class="quantity">${public_repos}</p>
-  //     <p class="fan">Public Repos</p>
-  //     </div>
-  //     <div class="fans-div">
-  //     <p class="quantity">${followers}</p>
-  //     <p class="fan">Followwers</p>
-  //     </div>
-  //     <div class="fans-div">
-  //     <p class="quantity">${following}</p>
-  //     <p class="fan">Followings</p>
-  //     </div>
-  //     </div>
-  //     </div>
-  //     </div>`  
-  //     document.querySelector('.profile-img').style.backgroundImage=`url(${avatar_url})`;
-  //     input.value ='';
-  //     input.focus();
-   
-     
-    }
-  
-  
-  
-  // searchProfile.addEventListener('click',()=>{
-    //   user =  searchInput.value;
-    
-    //   ;
-
-//   async function getUser(user) {
-//     const profileUser = await fetch(`https://api.github.com/users/Selman-S/following`);
-//     const profile = await profileUser.json();
-//     return profile
-//   }
-  
-//   getUser(user).then(function (user) {
-//     img.style.backgroundImage = `url(${user.avatar_url})`;
-//     nameUser.textContent = `${user.name}
-//     `;
-//   })
-// })
-
-
+             </div>
+             </div></div>`
+             
+            });
+            
+            
+            
+          }
+            
