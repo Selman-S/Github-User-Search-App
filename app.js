@@ -73,15 +73,16 @@ async function getUser() {
     const user = document.querySelector('.login').textContent;
    
     
-    const url =await `https://api.github.com/users/${user}?client_id=3b925c08aab40ac38d05&client_secret=31be1b1285e20f238e8777adb3bc11907739a47b`;
+    const url =await `https://api.github.com/users/${user}/following?client_id=3b925c08aab40ac38d05&client_secret=31be1b1285e20f238e8777adb3bc11907739a47b`;
   
+   console.log(url);
    
   
       const profileUser = await fetch(url);
       const profile = await profileUser.json();
       
       profile.forEach(async (us)=>{
-        const url = `https://api.github.com/users/${us.login}`;
+        const url =await `https://api.github.com/users/${us.login}`;
 
         const profileUser = await fetch(url);
         const profile = await profileUser.json();
