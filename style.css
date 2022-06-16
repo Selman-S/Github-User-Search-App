@@ -216,3 +216,9 @@ box-shadow: 5px 5px 30px -10px gray;
   margin-top: .4rem;
   font-weight: normal;
 }
+
+@media (max-width: 576px;){
+  .btn-div{
+    display: block;
+  }
+}
