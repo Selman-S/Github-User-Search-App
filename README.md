@@ -1,15 +1,3 @@
-# Github-User-Search-with-API
-
-
-
-
-
-
-
-
-
-
-
 
 
 
